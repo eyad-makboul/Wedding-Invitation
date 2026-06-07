@@ -20,6 +20,18 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment
+
+Create a local `.env` file before development:
+
+```bash
+cp .env.example .env
+```
+
+For local dev, the example uses SQLite with `prisma/dev.db`. For Vercel production, set a cloud database URL in Vercel Dashboard as `DATABASE_URL`.
+
+If you want to deploy with a working backend on Vercel, use a hosted database such as Supabase, Planetscale, or Neon, then add its connection URL as `DATABASE_URL`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -55,6 +67,6 @@ npm run prisma:migrate
 npm run dev
 ```
 
-After that the RSVP form will POST to `/api/rsvp` and entries will be saved to `prisma/dev.db`.
+After that the RSVP form will POST to `/api/rsvp` and entries will be saved to `prisma/dev.db` locally.
 
-If you prefer a hosted DB (Supabase, PlanetScale, etc.), update `prisma/schema.prisma` datasource `url` accordingly and re-run `prisma migrate`.
+If you prefer a hosted DB (Supabase, Planetscale, etc.), set `DATABASE_URL` in Vercel, update `prisma/schema.prisma` datasource if needed, and run `npx prisma db push` or `npm run prisma:migrate` locally.
