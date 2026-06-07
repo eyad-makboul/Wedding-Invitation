@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "Rsvp" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "phone" TEXT NOT NULL,
+    "guests" INTEGER NOT NULL DEFAULT 1,
+    "status" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

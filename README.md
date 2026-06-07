@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## RSVP database (Prisma + SQLite)
+
+This project includes a small Prisma schema for storing RSVP submissions.
+
+Quick setup:
+
+```bash
+# install dependencies
+npm install
+
+# generate Prisma client
+npm run prisma:generate
+
+# run a dev migration to create SQLite DB
+npm run prisma:migrate
+
+# start dev server
+npm run dev
+```
+
+After that the RSVP form will POST to `/api/rsvp` and entries will be saved to `prisma/dev.db`.
+
+If you prefer a hosted DB (Supabase, PlanetScale, etc.), update `prisma/schema.prisma` datasource `url` accordingly and re-run `prisma migrate`.
