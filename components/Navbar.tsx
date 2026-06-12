@@ -43,7 +43,7 @@ export function Navbar() {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <button className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="nav-logo-text gold-shimmer">A & A</span>
+          <span className="nav-logo-text gold-shimmer"><img  src="/logo/alaayman.png" alt='A & A' style={{width:'50px'}}/></span>
         </button>
 
         <div className="nav-links">

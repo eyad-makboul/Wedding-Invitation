@@ -39,12 +39,12 @@ export const translations = {
     countdownHours: 'Hours',
     countdownMinutes: 'Minutes',
     countdownSeconds: 'Seconds',
-    countdownSubtext: 'Until we say "I Do"',
+    countdownSubtext: 'Until our joy "is complete"',
 
     // Venue
     venueTitle: 'Venue',
-    venueName: 'Grand Royal Hall',
-    venueAddress: 'Cairo, Egypt',
+    venueName: 'Viola Wedding Hall ',
+    venueAddress: 'Suez, Egypt',
     venueOpenMap: 'Open in Maps',
     venueGetDirections: 'Get Directions',
 
@@ -133,12 +133,12 @@ export const translations = {
     countdownHours: 'ساعة',
     countdownMinutes: 'دقيقة',
     countdownSeconds: 'ثانية',
-    countdownSubtext: 'حتى نقول "نعم"',
+    countdownSubtext: 'حتى تكتمل "البهجة"',
 
     // Venue
     venueTitle: 'مكان الحفل',
-    venueName: 'قاعة جراند رويال',
-    venueAddress: 'القاهرة - مصر',
+    venueName: 'قاعة فيولا في منتجع لوسيندا',
+    venueAddress: 'السويس - مصر',
     venueOpenMap: 'فتح في الخريطة',
     venueGetDirections: 'الحصول على الاتجاهات',
 

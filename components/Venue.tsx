@@ -32,38 +32,80 @@ export function Venue() {
           {/* Map */}
           <motion.div
             className="venue-map-container"
+            style={{ width: "100%", height: "100%", minHeight: "400px" }}
             initial={{ opacity: 0, x: isRTL ? 40 : -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div
-              className="venue-map-wrapper"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '340px',
-                background: 'rgba(255,255,255,0.04)',
-                borderRadius: '24px',
-                border: '1px solid rgba(255,255,255,0.08)',
-                position: 'relative',
-              }}
-            >
-              <div style={{ textAlign: 'center', padding: '24px', color: '#f3f4f6', maxWidth: '420px' }}>
-                <h3 style={{ marginBottom: '12px', fontSize: '1.25rem' }}>Map Disabled</h3>
-                <p style={{ marginBottom: '16px', color: '#9ca3af' }}>
-                  Google Maps has been disabled to avoid external loading errors.
-                </p>
-                <a
-                  href="https://maps.google.com/?q=Grand+Royal+Hall+Cairo+Egypt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-gold-full"
+            <div className="venue-map-wrapper" style={{ width: "100%", height: "100%", minHeight: "400px" }}>
+              <a
+                href="https://maps.app.goo.gl/H7iE2NgMku4EM2nq9?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  minHeight: "400px",
+                  position: "relative",
+                  overflow: "hidden",
+                  borderRadius: "24px",
+                }}
+              >
+                <img
+                  src="/images/venue.jpg"
+                  alt="Viola Wedding Hall"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    minHeight: "400px",
+                    objectFit: "cover",
+                    borderRadius: "24px",
+                    transition: "0.5s",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.3), transparent)",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "24px",
+                    left: "24px",
+                    right: "24px",
+                    color: "white",
+                    zIndex: 2,
+                  }}
                 >
-                  Open Map in Google Maps
-                </a>
-              </div>
+                  <h3
+                    style={{
+                      fontSize: "1.8rem",
+                      marginBottom: "8px",
+                      color: "#D4AF37",
+                      fontFamily: "serif"
+                    }}
+                  >
+                    Viola Wedding Hall
+                  </h3>
+
+                  <p
+                    style={{
+                      color: "#e5e7eb",
+                      fontSize: ".95rem",
+                    }}
+                  >
+                    ✨ Tap to Open Location
+                  </p>
+                </div>
+              </a>
             </div>
           </motion.div>
 
@@ -84,7 +126,7 @@ export function Venue() {
 
               <div className="venue-actions-stack">
                 <a
-                  href="https://maps.google.com/?q=Grand+Royal+Hall+Cairo+Egypt"
+                  href="https://maps.app.goo.gl/H7iE2NgMku4EM2nq9?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-gold-full"
@@ -93,7 +135,7 @@ export function Venue() {
                   {t.venueOpenMap}
                 </a>
                 <a
-                  href="https://maps.google.com/maps/dir//Cairo+Egypt"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Lusinda+Resort+%26+Spa+Suez"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-full"
