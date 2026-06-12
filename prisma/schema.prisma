@@ -10,7 +10,6 @@ datasource db {
 model Rsvp {
   id        Int      @id @default(autoincrement())
   name      String
-  phone     String
   guests    Int      @default(1)
   status    String
   createdAt DateTime @default(now())
