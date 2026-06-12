@@ -9,20 +9,18 @@ type Status = 'attend' | 'not-attend' | '';
 
 interface FormData {
   name: string;
-  phone: string;
   guests: string;
   status: Status;
 }
 
 interface FormErrors {
   name?: string;
-  phone?: string;
   status?: string;
 }
 
 export function RSVPForm() {
   const { t, isRTL } = useLanguage();
-  const [form, setForm] = useState<FormData>({ name: '', phone: '', guests: '1', status: '' });
+  const [form, setForm] = useState<FormData>({ name: '', guests: '1', status: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -30,7 +28,6 @@ export function RSVPForm() {
   const validate = () => {
     const errs: FormErrors = {};
     if (!form.name.trim()) errs.name = 'Required';
-    if (!form.phone.trim()) errs.phone = 'Required';
     if (!form.status) errs.status = 'Required';
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -110,23 +107,6 @@ export function RSVPForm() {
                     dir={isRTL ? 'rtl' : 'ltr'}
                   />
                   {errors.name && <span className="form-error">{errors.name}</span>}
-                </div>
-
-                {/* Phone */}
-                <div className="form-group">
-                  <label className="form-label">
-                    <Phone size={16} className="text-gold" />
-                    {t.rsvpPhone}
-                  </label>
-                  <input
-                    type="tel"
-                    className={`form-input ${errors.phone ? 'error' : ''}`}
-                    value={form.phone}
-                    onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                    placeholder={t.rsvpPhone}
-                    dir="ltr"
-                  />
-                  {errors.phone && <span className="form-error">{errors.phone}</span>}
                 </div>
 
                 {/* Guests */}

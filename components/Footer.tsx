@@ -25,11 +25,6 @@ export function Footer() {
           transition={{ duration: 0.8 }}
         >
           {/* Monogram */}
-          <div className="footer-monogram">
-            <span className="footer-letter">A</span>
-            <Heart size={20} className="text-gold footer-heart" />
-            <span className="footer-letter">A</span>
-          </div>
 
           <p className="footer-message">{t.footerMessage}</p>
 
@@ -38,9 +33,6 @@ export function Footer() {
           <div className="gold-divider mx-auto" />
 
           <p className="footer-date">{t.footerDate}</p>
-
-          <p className="footer-hashtag">{t.footerHashtag}</p>
-
           {/* Decorative rings */}
           <div className="footer-rings" aria-hidden="true">
             <span className="ring ring-left" />

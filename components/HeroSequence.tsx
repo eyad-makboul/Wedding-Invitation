@@ -83,12 +83,12 @@ export function HeroSequence({ onReady }: HeroSequenceProps) {
   }, [drawFrame]);
 
   // ── Auto-advance when loading finishes ───────────────────────────────────
- useEffect(() => {
-  if (!allFramesLoaded) return;
+  useEffect(() => {
+    if (!allFramesLoaded) return;
 
-  // Always show language selection
-  setShowLangScreen(true);
-}, [allFramesLoaded]);
+    // Always show language selection
+    setShowLangScreen(true);
+  }, [allFramesLoaded]);
 
   // ── Portal root ──────────────────────────────────────────────────────────
   useEffect(() => {
@@ -147,11 +147,11 @@ export function HeroSequence({ onReady }: HeroSequenceProps) {
 
   // ── Language select handler ──────────────────────────────────────────────
   const handleLangSelect = (code: Language) => {
-  setLang(code);
-  setShowLangScreen(false);
-  setIsReady(true);
-  onReady?.();
-};
+    setLang(code);
+    setShowLangScreen(false);
+    setIsReady(true);
+    onReady?.();
+  };
   return (
     <>
       {/* ── Overlays ── */}
@@ -256,7 +256,7 @@ export function HeroSequence({ onReady }: HeroSequenceProps) {
                 }}>
                   {([
                     { code: 'en' as Language, flag: '🇬🇧', label: 'English', font: 'Playfair Display, serif' },
-                     { code: 'ar' as Language, flag: '🇪🇬', label: 'العربية', font: 'Cairo, sans-serif' },
+                    { code: 'ar' as Language, flag: '🇪🇬', label: 'العربية', font: 'Cairo, sans-serif' },
                   ]).map((lng, i) => (
                     <motion.button
                       key={lng.code}
@@ -300,7 +300,7 @@ export function HeroSequence({ onReady }: HeroSequenceProps) {
                         {lng.label}
                       </span>
                       <span style={{ fontSize: '11px', color: '#6B7280', letterSpacing: '0.5px' }}>
-                       
+
                       </span>
                     </motion.button>
                   ))}
@@ -329,31 +329,68 @@ export function HeroSequence({ onReady }: HeroSequenceProps) {
           {/* Section 1 — Hero */}
           <section id="hero" className="standalone-section hero-card-section">
             <div className="section-container hero-glass-card" dir={isRTL ? 'rtl' : 'ltr'}>
-              <motion.p className="hero-tagline" initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 1, delay: 0.3 }}>
-                {t.heroTagline}
-              </motion.p>
-              <motion.h1
-                className="hero-names gold-shimmer"
-                initial={{ opacity: 0, y: 50, filter: 'blur(20px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 1.2, delay: 0.6 }}
-                style={{ fontFamily: isRTL ? 'Cairo, sans-serif' : 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 8vw, 6rem)', fontWeight: 300, letterSpacing: isRTL ? '2px' : '4px' }}
+
+              {/* Logo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 1.2, delay: 0.4 }}
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '24px' }}
               >
-                {t.heroNames}
-              </motion.h1>
+                <img
+                  src="/logo/alaayman.png"
+                  alt="Wedding Logo"
+                  style={{
+                    width: '260px',
+                    maxWidth: '70vw',
+                    filter: 'drop-shadow(0 0 20px rgba(212,175,55,0.4))',
+                  }}
+                />
+              </motion.div>
+
+              {/* Subtitle */}
               <motion.p
                 className="hero-subtitle"
                 initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 1, delay: 1 }}
-                style={{ fontFamily: isRTL ? 'Cairo, sans-serif' : undefined, fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', lineHeight: 2 }}
+                transition={{ duration: 1, delay: 0.9 }}
+                style={{
+                  fontFamily: isRTL ? 'Cairo, sans-serif' : undefined,
+                  fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+                  lineHeight: 2,
+                  textAlign: 'center',
+                }}
               >
-                {t.heroSubtitle.split('\n').map((line, i) => <span key={i} className="block">{line}</span>)}
+                {t.heroSubtitle.split('\n').map((line, i) => (
+                  <span key={i} className="block">{line}</span>
+                ))}
               </motion.p>
-              <motion.div className="scroll-indicator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 1.5 }}>
-                <span className="scroll-text" style={{ fontFamily: isRTL ? 'Cairo, sans-serif' : undefined }}>{t.scrollToExplore}</span>
-                <div className="scroll-mouse"><div className="scroll-wheel" /></div>
+
+              {/* Scroll Indicator — يظهر بعد 5 ثواني ويختفي بعد 5 ثواني */}
+              <motion.div
+                className="scroll-indicator"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0, 0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 10,
+                  delay: 0,
+                  times: [0, 0.5, 0.55, 0.95, 1],
+                  ease: 'easeInOut',
+                }}
+              >
+                <span
+                  className="scroll-text"
+                  style={{ fontFamily: isRTL ? 'Cairo, sans-serif' : undefined }}
+                >
+                  {t.scrollToExplore}
+                </span>
+                <div className="scroll-mouse">
+                  <div className="scroll-wheel" />
+                </div>
               </motion.div>
+
             </div>
           </section>
 
