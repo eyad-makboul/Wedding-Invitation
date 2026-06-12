@@ -6,7 +6,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 export function Countdown() {
   const { t } = useLanguage();
-  const targetDate = new Date('2026-12-20T19:00:00');
+  const targetDate = new Date('2026-08-02T17:00:00');
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [prevTime, setPrevTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 

@@ -55,7 +55,7 @@ export class ImageSequenceLoader {
         this.loadingPromises.delete(index);
         reject(new Error(`Failed to load frame ${index + 1}`));
       };
-      img.src = this.getFramePath(index + 1);
+      img.src = this.getFramePath(index + 11);
     });
 
     this.loadingPromises.set(index, promise);

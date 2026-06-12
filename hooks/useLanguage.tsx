@@ -8,6 +8,7 @@ interface LanguageContextType {
   lang: Language;
   t: typeof translations.en;
   toggleLang: () => void;
+  setLang: (lang: Language) => void;
   isRTL: boolean;
 }
 
@@ -15,6 +16,7 @@ const LanguageContext = createContext<LanguageContextType>({
   lang: 'en',
   t: translations.en,
   toggleLang: () => {},
+  setLang: () => {},
   isRTL: false,
 });
 
@@ -24,7 +26,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem('wedding-lang') as Language | null;
     if (saved && (saved === 'en' || saved === 'ar')) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLang(saved);
     }
   }, []);
@@ -44,6 +45,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       lang,
       t: translations[lang] as typeof translations.en,
       toggleLang,
+      setLang,
       isRTL: lang === 'ar',
     }}>
       {children}

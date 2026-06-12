@@ -5,24 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/hooks/useLanguage';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-// Gallery items - using placeholder gradient images (replace with real photos)
 const GALLERY_ITEMS = [
-  { id: 1, src: '/images/gallery-1.jpg', alt: 'Couple photo 1', span: 'tall' },
-  { id: 2, src: '/images/gallery-2.jpg', alt: 'Couple photo 2', span: 'wide' },
-  { id: 3, src: '/images/gallery-3.jpg', alt: 'Couple photo 3', span: 'normal' },
-  { id: 4, src: '/images/gallery-4.jpg', alt: 'Couple photo 4', span: 'normal' },
-  { id: 5, src: '/images/gallery-5.jpg', alt: 'Couple photo 5', span: 'tall' },
-  { id: 6, src: '/images/gallery-6.jpg', alt: 'Couple photo 6', span: 'wide' },
-];
-
-// Placeholder gradient colors for demo (when no real photos)
-const GRADIENTS = [
-  'linear-gradient(135deg, #1a0a00 0%, #4a2800 50%, #D4AF37 100%)',
-  'linear-gradient(135deg, #0a0a1a 0%, #1a1a4a 50%, #D4AF37 100%)',
-  'linear-gradient(135deg, #0a1a0a 0%, #1a3a1a 50%, #D4AF37 100%)',
-  'linear-gradient(135deg, #1a0a0a 0%, #3a1a1a 50%, #D4AF37 100%)',
-  'linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 50%, #D4AF37 100%)',
-  'linear-gradient(135deg, #0a1a1a 0%, #1a3a3a 50%, #D4AF37 100%)',
+  { id: 1, src: '/images/gallery-1.jpeg', alt: 'Couple photo 1', span: 'tall' },
+  { id: 2, src: '/images/gallery-2.jpeg', alt: 'Couple photo 2', span: 'wide' },
+  { id: 3, src: '/images/gallery-3.jpeg', alt: 'Couple photo 3', span: 'normal' },
+  { id: 4, src: '/images/gallery-4.jpeg', alt: 'Couple photo 4', span: 'normal' },
+  { id: 5, src: '/images/gallery-5.jpeg', alt: 'Couple photo 5', span: 'tall' },
+  { id: 6, src: '/images/gallery-6.jpeg', alt: 'Couple photo 6', span: 'wide' },
 ];
 
 export function Gallery() {
@@ -55,7 +44,6 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        {/* Masonry Grid */}
         <div className="masonry-grid">
           {GALLERY_ITEMS.map((item, i) => (
             <motion.div
@@ -68,19 +56,20 @@ export function Gallery() {
               onClick={() => openLightbox(i)}
             >
               <div className="masonry-img-wrapper">
-                {/* Gradient placeholder (replace with real Image component) */}
-                <div
+                <img
+                  src={item.src}
+                  alt={item.alt}
                   className="masonry-placeholder"
-                  style={{ background: GRADIENTS[i % GRADIENTS.length] }}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                  loading="lazy"
                 />
-                {/* Hover Overlay */}
                 <motion.div
                   className="masonry-overlay"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ZoomIn size={32} className="text-gold" />
+                  <ZoomIn size={32} color="#D4AF37" />
                 </motion.div>
               </div>
             </motion.div>
@@ -105,9 +94,11 @@ export function Gallery() {
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={e => e.stopPropagation()}
             >
-              <div
+              <img
+                src={GALLERY_ITEMS[lightboxIndex].src}
+                alt={GALLERY_ITEMS[lightboxIndex].alt}
                 className="lightbox-img"
-                style={{ background: GRADIENTS[lightboxIndex % GRADIENTS.length] }}
+                style={{ objectFit: 'contain' }}
               />
               <button className="lightbox-close" onClick={closeLightbox}>
                 <X size={24} />
