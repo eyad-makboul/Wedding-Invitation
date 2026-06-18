@@ -50,8 +50,8 @@ export const translations = {
     storyTitle: 'Our Journey',
     storySubtitle: 'Our Journey.. From Childhood to a Forever Beginning,\n Insha "Allah" ',
     storyEvents: [
-      { year: 'Mar 13, 2025', title: 'The First Step', description: 'The very first chapter, and the first spoken word of a lifelong, silent dream. A single step that finally brought a hidden wish into the light.' },
-      { year: 'Mar 15, 2025', title: 'The Traditional Proposal', description: 'When our families met, and the formal blessings were beautifully given. The day our fathers shook hands, turning our shared hope into an official promise.' },
+
+      { year: 'Mar 15, 2025', title: 'The First Step', description: 'The beautiful beginning of our blessed journey, when our families met and formal blessings were given. The day our fathers shook hands, turning our shared hope into an official promise and opening our most beautiful chapter.' },
       { year: 'Aug 2, 2025', title: 'The Family Gathering & Rings', description: 'The day of our formal family gathering to strengthen our bonds, and the beautiful afternoon we chose our wedding rings together as a symbol of our forever.' },
       { year: 'Aug 8, 2025', title: 'The Engagement Party', description: 'The day we officially celebrated our commitment surrounded by love and laughter, wearing our rings as a beautiful reminder of the days to come.' },
       { year: 'Jan 15, 2026', title: 'The Marrige Contract (Katb El-Kitab)', description: 'The sacred day we signed our marriage contract and officially became husband and wife. A divine bond blessed by our loved ones" hearts and sealed forever.."' },
@@ -142,8 +142,7 @@ export const translations = {
     storyTitle: 'قصتنا',
     storySubtitle: 'رحلة العمر.. من الطفولة إلى بداية تدوم إن شاء الله',
     storyEvents: [
-      { year: '13 مارس 2025', title: 'الخطوة الأولى (المبادرة المباركة )', description: 'بداية الحديث، وأول نبضة مُعلنة لحبٍ طال انتظاره في صمت. هنا فُتِح الكتاب، وكُتِبت الكلمة الأولى في فصلنا الأجمل.' },
-      { year: '15 مارس 2025', title: 'الخطبة التقليدية (مباركة الآباء)', description: 'حين تلاقت العهود ومباركة الآباء، ودُقّت الأبواب رسمياً لتوثيق الوعد. خطوة مباركة انتقلت بها الأماني إلى النور برضا الأهل ودعواتهم.' },
+      { year: '15 مارس 2025', title: 'الخطوة الأولى (الخطبة التقليدية ومباركة الآباء)', description: 'بداية رحلتنا المباركة، حين تلاقت العهود ورضا الآباء، ودُقّت الأبواب رسمياً لتوثيق الوعد. خطوة انطلقت بها الأماني برضا الأهل ودعواتهم، لتبدأ الكلمة الأولى في فصلنا الأجمل.' },
       { year: '2 أغسطس 2025', title: 'مجلس التعارف والاتفاق (روابط العائلة)', description: 'يوم التقت فيه العائلة الكبيرة للتعارف وتوثيق روابط المحبة والاتفاق، واليوم الذي اخترنا فيه معاً ميثاق البداية ورموز الارتباط التي سترافقنا طوال العمر.' },
       { year: '8 أغسطس 2025', title: 'حفل الخطوبة (إعلان الفرحة)', description: 'يوم أعلنا للعالم فرحتنا، وارتدينا دبل الخطوبة وسط بهجة المحبين، ليكون هذا المساء شاهداً على اقتراب الملتقى المنتظر.' },
       { year: '15 يناير 2026', title: 'عقد القران (عقدٌ وميثاق غليظ)', description: 'اليوم الذي توّجنا فيه زوجين رسمياً أمام الله والخلق. باركت فيه القلوب رابطتنا، وجفّت الأقلام لتجمع أسماءنا في دفترٍ واحد إلى الأبد.' },

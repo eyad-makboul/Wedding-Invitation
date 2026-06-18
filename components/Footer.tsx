@@ -42,7 +42,7 @@ export function Footer() {
 
             }}>
               {isRTL 
-                ? "شكر خاص لأسماء، العقل المبدع وراء تصاميم الفرح الجميلة." 
+                ? "شكر خاص للقائمة على الأفكار الإبداعية لهذا الحفل." 
                 : "Special thanks to the official sponsor and the creative mind behind our celebration."
               }
             </p>
@@ -95,11 +95,11 @@ export function Footer() {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
               <span style={{ fontFamily: isRTL ? 'Cairo, sans-serif' : undefined }}>
-                {isRTL ? 'صفحتها على إنستغرام' : 'Celia Craft'}
+                {isRTL ? 'Celia Craft' : 'Celia Craft'}
               </span>
             </motion.a>
           </div>
-
+          <br/>
           {/* Decorative rings */}
           <div className="footer-rings" aria-hidden="true">
             <span className="ring ring-left" />
