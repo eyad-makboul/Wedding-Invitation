@@ -10,7 +10,7 @@ export async function POST(req: Request) {
       status?: string;
     };
 
-    if (!name ||  !status) {
+    if (!name || !status) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -24,7 +24,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true, rsvp });
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error(e);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }

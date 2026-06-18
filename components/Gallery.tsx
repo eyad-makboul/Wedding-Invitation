@@ -6,8 +6,8 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const GALLERY_ITEMS = [
-  { id: 1, src: '/images/gallery-1.jpeg', alt: 'Couple photo 1', span: 'tall' },
-  { id: 2, src: '/images/gallery-2.jpeg', alt: 'Couple photo 2', span: 'wide' },
+  { id: 1, src: '/images/gallery-2.jpeg', alt: 'Couple photo 1', span: 'tall' },
+  { id: 2, src: '/images/gallery-1.jpeg', alt: 'Couple photo 2', span: 'wide' },
   { id: 3, src: '/images/gallery-3.jpeg', alt: 'Couple photo 3', span: 'normal' },
   { id: 4, src: '/images/gallery-4.jpeg', alt: 'Couple photo 4', span: 'normal' },
   { id: 5, src: '/images/gallery-5.jpeg', alt: 'Couple photo 5', span: 'tall' },
