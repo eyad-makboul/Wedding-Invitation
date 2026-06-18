@@ -12,9 +12,6 @@ export function Footer() {
       <div className="footer-border" />
 
       {/* Floral Decoration */}
-      <div className="footer-floral left" aria-hidden="true">✿</div>
-      <div className="footer-floral right" aria-hidden="true">✿</div>
-
       <div className="footer-container">
         <motion.div
           className="footer-content"

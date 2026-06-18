@@ -1671,146 +1671,91 @@ html, body {
 /* ==========================================================================
    FOOTER
    ========================================================================== */
+/* ==========================================================================
+   FOOTER (STANDALONE)
+   ========================================================================== */
+/* ==========================================================================
+   FOOTER (MATCHING RSVP EXACTLY)
+   ========================================================================== */
 .wedding-footer {
   background: transparent !important;
   position: relative;
-  padding: 100px 24px;
-  border-top: 1px solid var(--border-gold);
+  padding: 40px 24px 120px; /* تقليل المسافة العلوية ليتناسق التتابع مع السيكشن السابق */
   overflow: hidden;
-}
-
-.footer-border {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 1200px;
-  height: 1px;
-  background: linear-gradient(to right, rgba(212,175,55,0), rgba(212,175,55,0.3) 50%, rgba(212,175,55,0));
 }
 
-.footer-floral {
-  position: absolute;
-  top: 40px;
-  font-size: 40px;
-  color: rgba(212, 175, 55, 0.08);
-  pointer-events: none;
-}
-
-.footer-floral.left {
-  left: 10%;
-}
-
-.footer-floral.right {
-  right: 10%;
-}
-
-.footer-content {
+/* إجبار الحاوية على أخذ نفس أبعاد وتصميم كروت السكاشن الفاخرة المعتمدة في موقعك */
+.wedding-footer .footer-container {
+  width: 100%;
+  max-width: 600px; /* نفس الحد الأقصى لكارت الـ RSVP الموضح في الكود الأساسي */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  
+  /* نفس تأثير الزجاج والخلفية */
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* نفس الحدود والزوايا */
+  border: 1px solid var(--border-gold);
+  border-radius: 24px;
+  
+  /* نفس الحشو الداخلي والظلال */
+  padding: 60px 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  
+  /* محاذاة العناصر بالداخل */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
 }
 
-.footer-monogram {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+/* تأثير الـ Hover المتطابق */
+.wedding-footer .footer-container:hover {
+  border-color: var(--border-gold-hover);
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.15);
 }
 
-.footer-letter {
-  font-family: var(--font-serif);
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: var(--gold-primary);
-  letter-spacing: 2px;
-}
-
-.footer-heart {
-  animation: pulseHeart 2s infinite ease-in-out;
-}
-
-.footer-message {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.25rem;
+/* تنسيق النصوص بالداخل لتكون متناسقة وفخمة */
+.footer-text-muted {
   color: var(--text-muted);
-  max-width: 500px;
+  font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+  font-weight: 300;
 }
 
-.footer-names {
+.footer-names-heading {
   font-family: var(--font-serif);
-  font-size: 3rem;
+  font-size: 3rem; /* حجم خط فخم ومتناسق */
   font-weight: 300;
-  margin-bottom: 16px;
+  color: #fff;
+  margin-top: 8px;
 }
-[dir="rtl"] .footer-names {
+[dir="rtl"] .footer-names-heading {
   font-family: var(--font-arabic);
 }
 
-.footer-date {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold-primary);
-  margin-top: 16px;
-  margin-bottom: 8px;
+/* توافق تام مع الشاشات الصغيرة (الموبايل) لمنع انكماش الكارت */
+@media (max-width: 600px) {
+  .wedding-footer {
+    padding: 20px 16px 80px;
+  }
+  .wedding-footer .footer-container {
+    padding: 40px 24px; /* نفس تباعد الموبايل لكارت الـ RSVP */
+    width: 100% !important; /* إجبار الكارت على التمدد بعرض الشاشة المتاح */
+  }
+  .footer-names-heading {
+    font-size: 2.2rem;
+  }
 }
-
-.footer-hashtag {
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-}
-
-.footer-rings {
-  display: flex;
-  margin-top: 32px;
-  justify-content: center;
-}
-
-.ring {
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--gold-primary);
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.ring-left {
-  transform: translateX(4px);
-}
-
-.ring-right {
-  transform: translateX(-4px);
-}
-
-.footer-credit {
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.2);
-  margin-top: 60px;
-}
-/* Darker variant for last section (slightly more than the sections above) */
-.wedding-footer-dark {
-   background: rgba(36, 36, 36, 0.55) !important;
-  border: 1px solid var(--border-gold);
-  border-radius: 12px;
-  width: 40%;
-  margin:auto;
-  margin-bottom: 50px;
-  padding: 32px 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-
-}
-
