@@ -6,7 +6,7 @@
 
 **A cinematic, luxury digital wedding invitation built with Next.js 15**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-gold?style=for-the-badge&logo=vercel&logoColor=white&color=D4AF37)](https://wedding-invitation-9d7g.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-gold?style=for-the-badge&logo=vercel&logoColor=white&color=D4AF37)](https://wedding-invitation-9d7g-3c4nb46tu.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
